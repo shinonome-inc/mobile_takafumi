@@ -1,6 +1,6 @@
 var numInt = 2000
 
-fun main() {
+fun main(args: Array<Int>) {
    println("Jugde leap year program")
    if(numInt % 400 == 0) {
        println("true")
