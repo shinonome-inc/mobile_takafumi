@@ -1,4 +1,4 @@
-fun numInt(a:Int) {
+fun numInt(a:Int):Int {
     if (a % 400 == 0) {
         println("true")
     } else if (a % 100 == 0) {
@@ -8,6 +8,7 @@ fun numInt(a:Int) {
     } else {
         println("false")
     }
+    return a
 }
 
 fun main() {
