@@ -10,7 +10,7 @@ enum class enumresult{
     Draw
 }
 
-fun janken () {
+fun janken ():Int {
 
     var x = readLine()?.toInt()
 
@@ -36,6 +36,8 @@ fun janken () {
     } else {
         println("正しく入力してください")
     }
+    return r
+
 
 }
 
