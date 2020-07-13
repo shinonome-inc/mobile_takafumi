@@ -17,14 +17,11 @@ fun janken(x:Int) {
     val r = (0..2).random()
 
     if(r == 0){
-        print("相手の手は")
-        println(Hand.Gu)
+        println("相手の手は${Hand.Gu}")
     }else if(r == 1) {
-        print("相手の手は")
-        println(Hand.Ti)
+        println("相手の手は${Hand.Ti}")
     }else {
-        print("相手の手は")
-        println(Hand.Pa)
+        println("相手の手は${Hand.Pa}")
     }
 
     if(r == 0 && x == 0 || r == 1 && x == 1 || r ==2 && x == 2) {
