@@ -7,12 +7,10 @@ enum class Hand{
 enum class Result{
     Win,
     Lose,
-    Draw
+    Draw,
 }
 
 fun janken(x:Int) {
-
-    val x = readLine()?.toInt()
 
     val r = (0..2).random()
 
@@ -41,6 +39,8 @@ fun main() {
 
     print("あなたの出す手を入力してください(グーは０、チョキは１、パーは２）：")
 
-    janken(0)
+    val x = readLine()?.toInt()
+
+    janken(x ?. toInt()!!)
 
 }
