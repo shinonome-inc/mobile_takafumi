@@ -1,44 +1,41 @@
-enum class enumhand{
+enum class Hand{
     Gu,
     Ti,
     Pa,
 }
 
-enum class enumresult{
+enum class Result{
     Win,
     Lose,
     Draw
 }
 
-fun janken ():Int {
+fun janken(x:Int) {
 
-    var x = readLine()?.toInt()
+    val x = readLine()?.toInt()
 
-    var r = (0..2).random()
+    val r = (0..2).random()
 
     if(r == 0){
         print("相手の手は")
-        println(enumhand.Gu)
+        println(Hand.Gu)
     }else if(r == 1) {
         print("相手の手は")
-        println(enumhand.Ti)
+        println(Hand.Ti)
     }else {
         print("相手の手は")
-        println(enumhand.Pa)
+        println(Hand.Pa)
     }
 
     if(r == 0 && x == 0 || r == 1 && x == 1 || r ==2 && x == 2) {
-        println(enumresult.Draw)
+        println(Result.Draw)
     }else if(r == 0 && x == 2 || r == 1 && x == 0 || r ==2 && x == 1){
-    println(enumresult.Win)
+    println(Result.Win)
     }else if(r == 0 && x == 1 || r == 1 && x == 2 || r ==2 && x == 0){
-        println(enumresult.Lose)
+        println(Result.Lose)
     } else {
         println("正しく入力してください")
     }
-    return r
-
-
 }
 
 
@@ -47,6 +44,6 @@ fun main() {
 
     print("あなたの出す手を入力してください(グーは０、チョキは１、パーは２）：")
 
-    janken()
+    janken(0)
 
 }
