@@ -10,7 +10,7 @@ enum class Result{
     Draw,
 }
 
-fun janken(x:Int) {
+fun janken(x: Int) {
 
     val r = (0..2).random()
 
@@ -41,6 +41,8 @@ fun main() {
 
     val x = readLine()?.toInt()
 
-    janken(x ?. toInt()!!)
+    if(x !=null){
+        janken(x)
+    }
 
 }
