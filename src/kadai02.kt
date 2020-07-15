@@ -26,11 +26,11 @@ fun janken(x: Hand) {
         }
     }
 
-    if(r.equals(0)  && x.equals(0) || r.equals(1) && x.equals(1) || r.equals(2) && x.equals(2)) {
+    if(r.equals(0)  && x.equals(Hand.Gu) || r.equals(1) && x.equals(Hand.Ti) || r.equals(2) && x.equals(Hand.Pa)) {
         println(Result.Draw)
-    }else if(r.equals(0) && x.equals(2) || r.equals(1) && x.equals(0) || r.equals(2) && x.equals(1)){
+    }else if(r.equals(0) && x.equals(Hand.Pa) || r.equals(1) && x.equals(Hand.Gu) || r.equals(2) && x.equals(Hand.Ti)){
         println(Result.Win)
-    }else if(r.equals(0) && x.equals(1) || r.equals(1) && x.equals(2) || r.equals(2) && x.equals(0)){
+    }else if(r.equals(0) && x.equals(Hand.Ti) || r.equals(1) && x.equals(Hand.Pa) || r.equals(2) && x.equals(Hand.Gu)){
         println(Result.Lose)
     } else {
         println("正しく入力してください")
@@ -48,7 +48,7 @@ fun main() {
     if(x == 1){
         y = Hand.Ti
 
-    }else if(x == 2){
+    }else if(x == 2) {
         y = Hand.Pa
     }
 
