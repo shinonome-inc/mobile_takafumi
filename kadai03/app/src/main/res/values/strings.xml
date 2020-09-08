@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">leap year</string>
+    <string name="run">run</string>
+    <string name="leap_year_judgment_program">Leap Year Judgment Program</string>
+</resources>
