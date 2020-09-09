@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07b94025-2f7e-485a-855b-c5fc03c42f94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/leapyear/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/leapyear/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -118,9 +121,15 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="818" y="333" key="AndroidCreateXmlResourceDialog" timestamp="1599553221984">
+    <state x="545" y="218" key="AndroidCreateXmlResourceDialog" timestamp="1599657890535">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1375" y="222" key="AndroidCreateXmlResourceDialog/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1599629711877" />
+    <state x="818" y="333" key="AndroidCreateXmlResourceDialog/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1599553221984" />
+    <state x="545" y="218" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1599657890535" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1599625026826">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="818" y="333" key="AndroidCreateXmlResourceDialog/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1599553221984" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1599625026826" />
   </component>
 </project>

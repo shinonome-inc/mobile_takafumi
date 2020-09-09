@@ -2,4 +2,9 @@
     <string name="app_name">leap year</string>
     <string name="run">run</string>
     <string name="leap_year_judgment_program">Leap Year Judgment Program</string>
+    <string name="setKekka">%1$,3d is leap year</string>
+    <string name="setResult">%1$,3d is leap year</string>
+    <string name="result">%1$,3d is leap year</string>
+    <string name="result2">%1$,3d is not leap year</string>
+    <string name="EditText_error">西暦を入力してください</string>
 </resources>
