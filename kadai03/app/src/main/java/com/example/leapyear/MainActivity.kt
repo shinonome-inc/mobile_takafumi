@@ -14,27 +14,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.button)
-        var textView = findViewById<TextView>(R.id.textView)
-
         button.setOnClickListener {
             var isValid = true
-            val editText = findViewById<EditText>(R.id.editText)
 
-            if(editText.text.isEmpty()){
+            if (editText.text.isEmpty()) {
                 editText.error = getString(R.string.EditText_error)
                 isValid = false
             }
 
-           if (isValid) {
-               val year = editText.text.toString().toInt()
+            if (isValid) {
+                val year = editText.text.toString().toInt()
 
-               if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-                   textView.text = "$year is leap year"
-               } else{
-                   textView.text = "$year is not leap year"
-               }
-           }
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                    textView.text = "$year is leap year"
+                } else {
+                    textView.text = "$year is not leap year"
+                }
+            }
         }
     }
 }
