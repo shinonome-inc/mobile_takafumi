@@ -25,7 +25,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/animation_list" />
+            app:srcCompat="@drawable/animation_list"
+            tools:srcCompat="@drawable/animation_list" />
 
         <ImageView
             android:id="@+id/enemy"
