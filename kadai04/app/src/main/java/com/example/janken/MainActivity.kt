@@ -10,24 +10,35 @@ import android.widget.TextView
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var Animation: AnimationDrawable
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var ad = AnimationDrawable()
+        var frame1 = resources.getDrawable(R.drawable.rock)
+        var frame2 = resources.getDrawable(R.drawable.scissors)
+        var frame3 = resources.getDrawable(R.drawable.paper)
+
+        ad.addFrame(frame1,50)
+        ad.addFrame(frame2,50)
+        ad.addFrame(frame3,50)
+        imageView.background = ad
+        ad.start()
+
+
         rock.setOnClickListener{
             janken(HandType.rock)
+            ad.stop()
         }
 
         scissors.setOnClickListener{
             janken(HandType.scissors)
+            ad.stop()
         }
 
         paper.setOnClickListener{
             janken(HandType.paper)
+            ad.stop()
         }
     }
 
@@ -41,7 +52,6 @@ class MainActivity : AppCompatActivity() {
         val r = Random.nextInt(3)
         val enemyHand:Int
         val myHand:Int=hand.n
-        val imageView = findViewById<ImageView>(R.id.enemyHand)
 
         if (r == 0) {
             enemyHand = HandType.rock.n

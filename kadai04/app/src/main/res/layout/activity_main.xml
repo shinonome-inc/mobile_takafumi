@@ -14,28 +14,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        tools:context=".MainActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:context=".MainActivity">
 
-        <ImageView
-            android:id="@+id/enemyHand"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/animation_list"
-            tools:srcCompat="@drawable/animation_list" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
-        <ImageView
-            android:id="@+id/enemy"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/enemy" />
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/enemy" />
 
-    </LinearLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView"

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- oneshot = "true", oneshot = "false" -->
     <animation-list xmlns:android = "http://schemas.android.com/apk/res/android"
-        android:oneshot = "true">
-        <!-- duration:表示間隔[msec]-->
-        <item android:durable = "@durable/rock" android:duration = "50" />
-        <item android:durable = "@durable/scissors" android:duration = "50" />
-        <item android:durable = "@durable/paper" android:duration = "50" />
+        android:oneshot = "false"
+        android:visible="false">
+        <item
+            android:drawable = "@drawable/rock"
+            android:duration = "50" />
+        <item
+            android:drawable = "@drawable/scissors"
+            android:duration = "50" />
+        <item
+            android:drawable = "@drawable/paper"
+            android:duration = "50" />
     </animation-list>
-
-</selector>
