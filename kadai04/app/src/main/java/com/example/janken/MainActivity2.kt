@@ -1,16 +1,14 @@
 package com.example.janken
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.graphics.drawable.AnimationDrawable
-import android.os.Handler
-import kotlinx.android.synthetic.main.activity_main.*
 import android.view.View
-import android.widget.ImageView
 import androidx.core.content.res.ResourcesCompat
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     enum class handType(val n: Int) {
         gu(0),
@@ -20,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
         val animationDrawable = AnimationDrawable()
         val frame1 = ResourcesCompat.getDrawable(resources, R.drawable.rock, null)
@@ -42,17 +40,17 @@ class MainActivity : AppCompatActivity() {
 
         rock.setOnClickListener {
             janken(handType.gu)
-            onJankenBottonTapped( it )
+            onJankenBottonTapped1( it)
         }
 
         scissors.setOnClickListener {
             janken(handType.choki)
-            onJankenBottonTapped( it )
+            onJankenBottonTapped1( it )
         }
 
         paper.setOnClickListener {
             janken(handType.pa)
-            onJankenBottonTapped( it )
+            onJankenBottonTapped1( it )
         }
 
     }
@@ -78,10 +76,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun onJankenBottonTapped( view: View? ) {
-        val intent = Intent( this, MainActivity2::class.java )
+    fun onJankenBottonTapped1( view: View? ) {
+        val intent = Intent( this, MainActivity::class.java )
         intent.putExtra("myHand", view?.id)
         startActivity( intent )
     }
 }
-
