@@ -1,8 +1,11 @@
 package com.example.janken
 
+import android.animation.ValueAnimator
+import android.graphics.drawable.Animatable2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.graphics.drawable.AnimationDrawable
+import android.os.Handler
 import android.view.animation.AlphaAnimation
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.ImageButton
@@ -28,55 +31,60 @@ class MainActivity : AppCompatActivity() {
             jankenAnimation = background as AnimationDrawable
         }
 
-        jankenImage.setOnClickListener({ jankenAnimation.start() })
+        jankenAnimation.start()
 
-            rock.setOnClickListener {
-                bottonAnimation(rock)
-                janken(handType.gu)
-            }
+        rock.setOnClickListener {
+            janken(handType.gu)
+        }
 
-            scissors.setOnClickListener {
-                bottonAnimation(scissors)
-                janken(handType.choki)
-            }
+        scissors.setOnClickListener {
+            janken(handType.choki)
+        }
 
-            paper.setOnClickListener {
-                bottonAnimation(paper)
-                janken(handType.pa)
-
-            }
+        paper.setOnClickListener {
+            janken(handType.pa)
+        }
 
     }
 
     fun janken(hand: handType) {
         val myHand: Int = hand.n
         val cpHand = (Math.random() * 3).toInt()
+        val handler = Handler()
+        var runnable = Runnable {}
+        var i: Int = 0
 
-        when ( cpHand ) {
-            0 -> enemyHand.setImageResource ( R.drawable.rock)
-            1 -> enemyHand.setImageResource ( R.drawable.scissors)
-            2 -> enemyHand.setImageResource ( R.drawable.paper)
+        runnable = Runnable {
+            i++
+
+            if (i >= 20) {
+                when (cpHand) {
+                    0 -> enemyHand.setBackgroundResource ( R.drawable.rock)
+                    1 -> enemyHand.setBackgroundResource ( R.drawable.scissors)
+                    2 -> enemyHand.setBackgroundResource ( R.drawable.paper)
+                }
+
+                val gameResult = (cpHand - myHand + 3) % 3
+
+                when (gameResult) {
+                    0 -> textView.text = "You drow"
+                    1 -> textView.text = "You win!"
+                    2 -> textView.text = "You lose"
+                }
+            } else {
+                handler.postDelayed(runnable, 50)
+                textView.text = "janken..."
+            }
         }
-
-        val gameResult = ( cpHand - myHand + 3) % 3
-
-        when (gameResult) {
-            0 -> textView.text = "You drow"
-            1 -> textView.text = "You win!"
-            2 -> textView.text = "You lose"
-        }
+        handler.post(runnable)
     }
+    fun fadeout(hand: handType, cpHand:Int) {
+        val fadeInAnimation = AlphaAnimation (0.0f, 1.0f)
+        val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
 
-    fun bottonAnimation( imageBotton:ImageButton ) {
-        val fadeInAnimation = AlphaAnimation(0.0f,1.0f)
-        val fadeOutAnimation = AlphaAnimation(0.0f,1.0f)
-
-        fadeOutAnimation.duration = 500
+        fadeInAnimation.duration = 100
+        fadeInAnimation.fillAfter = true
+        fadeOutAnimation.duration = 100
         fadeOutAnimation.fillAfter = true
-        imageBotton.animation = fadeOutAnimation
-        fadeInAnimation.duration = 500
-        fadeInAnimation.fillAfter= true
-        imageBotton.animation = fadeInAnimation
-
     }
 }

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="248820ac-0741-4f9e-9ec7-200f1f194541" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../kadai04/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kadai04/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../kadai04/app/src/main/java/com/example/janken/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../kadai04/app/src/main/java/com/example/janken/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kadai04/app/src/main/java/com/example/janken/MainActivity2.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../kadai04/app/src/main/res/layout/activity_main2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kadai05.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +52,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="95" key="FileChooserDialogImpl" timestamp="1602234748350">
+    <state x="740" y="95" key="FileChooserDialogImpl" timestamp="1602425079948">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="740" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602234748350" />
+    <state x="740" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602425079948" />
   </component>
 </project>
