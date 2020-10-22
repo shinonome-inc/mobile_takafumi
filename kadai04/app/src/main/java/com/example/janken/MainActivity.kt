@@ -19,19 +19,12 @@ class MainActivity : AppCompatActivity() {
         pa(2)
     }
 
-    private lateinit var jankenAnimation: AnimationDrawable
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val jankenImage = findViewById<ImageView>(R.id.enemyHand).apply {
-            setBackgroundResource(R.drawable.animation_list)
-            jankenAnimation = background as AnimationDrawable
-        }
-
-        jankenAnimation.start()
+        enemyHand.setImageResource( R.drawable.rock )
 
         rock.setOnClickListener {
             janken(handType.gu)
@@ -57,11 +50,18 @@ class MainActivity : AppCompatActivity() {
         runnable = Runnable {
             i++
 
-            if (i >= 20) {
-                when (cpHand) {
-                    0 -> enemyHand.setBackgroundResource ( R.drawable.rock)
-                    1 -> enemyHand.setBackgroundResource ( R.drawable.scissors)
-                    2 -> enemyHand.setBackgroundResource ( R.drawable.paper)
+            when (i % 3) {
+                0 -> enemyHand.setImageResource( R.drawable.rock )
+                1 -> enemyHand.setImageResource( R.drawable.scissors )
+                2 -> enemyHand.setImageResource( R.drawable.paper )
+            }
+
+            if (i >= 30){
+
+                when ( cpHand ) {
+                    0 -> enemyHand.setImageResource( R.drawable.rock )
+                    1 -> enemyHand.setImageResource( R.drawable.scissors )
+                    2 -> enemyHand.setImageResource( R.drawable.paper )
                 }
 
                 val gameResult = (cpHand - myHand + 3) % 3
@@ -71,20 +71,12 @@ class MainActivity : AppCompatActivity() {
                     1 -> textView.text = "You win!"
                     2 -> textView.text = "You lose"
                 }
+//                jankenAnimation.start()
             } else {
                 handler.postDelayed(runnable, 50)
                 textView.text = "janken..."
             }
         }
         handler.post(runnable)
-    }
-    fun fadeout(hand: handType, cpHand:Int) {
-        val fadeInAnimation = AlphaAnimation (0.0f, 1.0f)
-        val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
-
-        fadeInAnimation.duration = 100
-        fadeInAnimation.fillAfter = true
-        fadeOutAnimation.duration = 100
-        fadeOutAnimation.fillAfter = true
     }
 }
