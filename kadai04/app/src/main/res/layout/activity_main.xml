@@ -53,23 +53,23 @@
                 android:id="@+id/rock"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/rock"
-                android:contentDescription="TODO" />
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rock" />
 
             <ImageButton
                 android:id="@+id/scissors"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/scissors"
-                android:contentDescription="TODO" />
+                android:contentDescription="TODO"
+                android:scaleType="fitCenter"
+                android:src="@drawable/scissors" />
 
             <ImageButton
                 android:id="@+id/paper"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:scaleType="fitXY"
+                android:scaleType="fitCenter"
                 android:src="@drawable/paper" />
         </LinearLayout>
 

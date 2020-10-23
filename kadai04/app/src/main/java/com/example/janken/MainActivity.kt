@@ -1,15 +1,11 @@
 package com.example.janken
 
-import android.animation.ValueAnimator
-import android.graphics.drawable.Animatable2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.graphics.drawable.AnimationDrawable
 import android.os.Handler
 import android.view.animation.AlphaAnimation
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.ImageButton
-import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,17 +20,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        enemyHand.setImageResource( R.drawable.rock )
+            enemyHand.setImageResource(R.drawable.rock)
 
         rock.setOnClickListener {
+            fadeBotton (rock)
             janken(handType.gu)
         }
 
         scissors.setOnClickListener {
+            fadeBotton (scissors)
             janken(handType.choki)
         }
 
         paper.setOnClickListener {
+            fadeBotton (paper)
             janken(handType.pa)
         }
 
@@ -47,6 +46,11 @@ class MainActivity : AppCompatActivity() {
         var runnable = Runnable {}
         var i: Int = 0
 
+        rock.isClickable = false
+        scissors.isClickable = false
+        paper.isClickable = false
+
+
         runnable = Runnable {
             i++
 
@@ -57,7 +61,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (i >= 30){
-
                 when ( cpHand ) {
                     0 -> enemyHand.setImageResource( R.drawable.rock )
                     1 -> enemyHand.setImageResource( R.drawable.scissors )
@@ -71,12 +74,29 @@ class MainActivity : AppCompatActivity() {
                     1 -> textView.text = "You win!"
                     2 -> textView.text = "You lose"
                 }
-//                jankenAnimation.start()
+
+                rock.isClickable = true
+                scissors.isClickable = true
+                paper.isClickable = true
+
             } else {
                 handler.postDelayed(runnable, 50)
                 textView.text = "janken..."
             }
         }
         handler.post(runnable)
+    }
+
+    fun fadeBotton ( imageButton: ImageButton ) {
+        val fadeoutAnimation = AlphaAnimation (1.0f,0.0f)
+        val fadeinAnimation = AlphaAnimation (0.0f,1.0f)
+
+        fadeoutAnimation.duration = 100
+        fadeoutAnimation.fillAfter = true
+        imageButton.animation = fadeoutAnimation
+
+        fadeinAnimation.duration = 100
+        fadeinAnimation.fillAfter = true
+        imageButton.animation = fadeinAnimation
     }
 }
