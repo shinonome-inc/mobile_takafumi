@@ -6,34 +6,29 @@ import android.os.Handler
 import android.view.animation.AlphaAnimation
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.ImageButton
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-
-    enum class handType(val n: Int) {
-        gu(0),
-        choki(1),
-        pa(2)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            enemyHand.setImageResource(R.drawable.rock)
+        enemyHand.setImageResource(R.drawable.paper)
 
         rock.setOnClickListener {
-            fadeBotton (rock)
+            fadeButton(rock)
             janken(handType.gu)
         }
 
         scissors.setOnClickListener {
-            fadeBotton (scissors)
+            fadeButton(scissors)
             janken(handType.choki)
         }
 
         paper.setOnClickListener {
-            fadeBotton (paper)
+            fadeButton(paper)
             janken(handType.pa)
         }
 
@@ -87,16 +82,25 @@ class MainActivity : AppCompatActivity() {
         handler.post(runnable)
     }
 
-    fun fadeBotton ( imageButton: ImageButton ) {
-        val fadeoutAnimation = AlphaAnimation (1.0f,0.0f)
-        val fadeinAnimation = AlphaAnimation (0.0f,1.0f)
+        fun fadeButton (handButton: ImageButton) {
+            val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
+            val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
 
-        fadeoutAnimation.duration = 100
-        fadeoutAnimation.fillAfter = true
-        imageButton.animation = fadeoutAnimation
+            fadeOutAnimation.duration = 100
+            fadeOutAnimation.fillAfter = true
+            handButton.animation = fadeOutAnimation
 
-        fadeinAnimation.duration = 100
-        fadeinAnimation.fillAfter = true
-        imageButton.animation = fadeinAnimation
-    }
+            fadeInAnimation.duration = 100
+            fadeInAnimation.fillAfter = true
+            handButton.animation = fadeInAnimation
+
+            rock.setImageResource(R.drawable.white)
+            rock.setImageResource(R.drawable.rock)
+
+        }
+}
+enum class handType(val n: Int) {
+    gu(0),
+    choki(1),
+    pa(2)
 }
