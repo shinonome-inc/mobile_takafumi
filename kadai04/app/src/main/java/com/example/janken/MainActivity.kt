@@ -86,17 +86,16 @@ class MainActivity : AppCompatActivity() {
             val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
             val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
 
-            fadeOutAnimation.duration = 100
+            fadeOutAnimation.duration = 1000
             fadeOutAnimation.fillAfter = true
             handButton.animation = fadeOutAnimation
 
-            fadeInAnimation.duration = 100
+            fadeInAnimation.duration = 1000
             fadeInAnimation.fillAfter = true
             handButton.animation = fadeInAnimation
 
             rock.setImageResource(R.drawable.white)
             rock.setImageResource(R.drawable.rock)
-
         }
 }
 enum class handType(val n: Int) {
