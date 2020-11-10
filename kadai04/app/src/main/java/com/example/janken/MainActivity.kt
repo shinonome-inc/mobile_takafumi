@@ -18,18 +18,18 @@ class MainActivity : AppCompatActivity() {
         enemyHand.setImageResource(R.drawable.paper)
 
         rock.setOnClickListener {
-            fadeButton(rock)
-            janken(HandType.gu)
+            fadeButton ( rock )
+            janken ( HandType.gu )
         }
 
         scissors.setOnClickListener {
-            fadeButton(scissors)
-            janken(HandType.choki)
+            fadeButton ( scissors )
+            janken ( HandType.choki )
         }
 
         paper.setOnClickListener {
-            fadeButton(paper)
-            janken(HandType.pa)
+            fadeButton ( paper )
+            janken ( HandType.pa )
         }
 
     }
@@ -55,9 +55,9 @@ class MainActivity : AppCompatActivity() {
                 HandType.pa -> enemyHand.setImageResource( R.drawable.paper )
             }
 
-            if (i >= 30){
+            if ( i >= 30 ){
 
-                when ( cpHand ) {
+                when (cpHand) {
                     HandType.gu -> enemyHand.setImageResource( R.drawable.rock )
                     HandType.choki -> enemyHand.setImageResource( R.drawable.scissors )
                     HandType.pa -> enemyHand.setImageResource( R.drawable.paper )
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
                 val gameResult = JankenResult.values().first { it.n == (cpHand.n - hand.n + 3) % 3 }
 
-                when (gameResult) {
+                when ( gameResult ) {
                     JankenResult.draw -> textView.text = "You drow"
                     JankenResult.win -> textView.text = "You win!"
                     JankenResult.lose -> textView.text = "You lose"
@@ -76,11 +76,11 @@ class MainActivity : AppCompatActivity() {
                 paper.isClickable = true
 
             } else {
-                handler.postDelayed( runnable, 50 )
+                handler.postDelayed ( runnable, 50 )
                 textView.text = "janken..."
             }
         }
-        handler.post( runnable )
+        handler.post ( runnable )
     }
 
         fun fadeButton ( handButton: ImageButton ) {
@@ -97,14 +97,14 @@ class MainActivity : AppCompatActivity() {
         }
 }
 
-enum class HandType(val n: Int) {
-    gu(0),
-    choki(1),
-    pa(2)
+enum class HandType( val n: Int ) {
+    gu(0 ),
+    choki(1 ),
+    pa(2 )
 }
 
-enum class JankenResult (val n:Int) {
-    draw(0),
-    win(1),
+enum class JankenResult ( val n:Int ) {
+    draw(0 ),
+    win(1) ,
     lose(2)
 }
