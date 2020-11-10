@@ -83,18 +83,18 @@ class MainActivity : AppCompatActivity() {
         handler.post (runnable)
     }
 
-        fun fadeButton (handButton: ImageButton) {
-            val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
-            val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
+    fun fadeButton (handButton: ImageButton) {
+        val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
+        val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
 
-            fadeOutAnimation.duration = 1000
-            fadeOutAnimation.fillAfter = true
-            handButton.animation = fadeOutAnimation
+        fadeOutAnimation.duration = 1000
+        fadeOutAnimation.fillAfter = true
+        handButton.animation = fadeOutAnimation
 
-            fadeInAnimation.duration = 1000
-            fadeInAnimation.fillAfter = true
-            handButton.animation = fadeInAnimation
-        }
+        fadeInAnimation.duration = 100
+        fadeInAnimation.fillAfter = true
+        handButton.animation = fadeInAnimation
+    }
 }
 
 enum class HandType(val n: Int) {
