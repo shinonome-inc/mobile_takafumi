@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun janken(hand: HandType) {
-        val myHand: Int = hand.n
-        val cpHand = HandType.values().first { it.n == (Math.random() * 3).toInt() }
+    fun janken (hand: HandType) {
+        val randomValue = ( Math.random() * 3 ).toInt()
+        val cpHand = HandType.values().first { it.n == randomValue }
         val handler = Handler()
         var runnable = Runnable {}
         var i: Int = 0
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (i >= 30){
-                val cpHand = HandType.values().first { it.n == (Math.random() * 3).toInt() }
+
                 when ( cpHand ) {
                     HandType.gu -> enemyHand.setImageResource( R.drawable.rock )
                     HandType.choki -> enemyHand.setImageResource( R.drawable.scissors )
@@ -83,9 +83,9 @@ class MainActivity : AppCompatActivity() {
         handler.post( runnable )
     }
 
-        fun fadeButton (handButton: ImageButton) {
-            val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
-            val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
+        fun fadeButton ( handButton: ImageButton ) {
+            val fadeOutAnimation = AlphaAnimation ( 1.0f,0.0f )
+            val fadeInAnimation = AlphaAnimation ( 0.0f,1.0f )
 
             fadeOutAnimation.duration = 1000
             fadeOutAnimation.fillAfter = true
@@ -94,9 +94,6 @@ class MainActivity : AppCompatActivity() {
             fadeInAnimation.duration = 1000
             fadeInAnimation.fillAfter = true
             handButton.animation = fadeInAnimation
-
-            rock.setImageResource(R.drawable.white)
-            rock.setImageResource(R.drawable.rock)
         }
 }
 
