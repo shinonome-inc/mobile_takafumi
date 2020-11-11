@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
                 val gameResult = JankenResult.values().first { it.n == (cpHand.n - hand.n + 3) % 3 }
 
-                when ( gameResult ) {
+                when (gameResult) {
                     JankenResult.draw -> textView.text = "You drow"
                     JankenResult.win -> textView.text = "You win!"
                     JankenResult.lose -> textView.text = "You lose"
@@ -105,6 +105,6 @@ enum class HandType(val n: Int) {
 
 enum class JankenResult (val n:Int) {
     draw(0),
-    win(1) ,
+    win(1),
     lose(2)
 }
