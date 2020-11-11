@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">janken</string>
+    <string name="janken_text">じゃん・けん</string>
+    <string name="janken">janken...</string>
+    <string name="rosk">TODO</string>
+    <string name="scissors">TODO</string>
+    <string name="paper">TODO</string>
+    <string name="human">TODO</string>
+    <string name="anime">TODO</string>
+    <string name="rock">TODO</string>
+</resources>

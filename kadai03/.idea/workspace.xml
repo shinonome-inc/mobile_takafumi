@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07b94025-2f7e-485a-855b-c5fc03c42f94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../kadai04/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kadai04/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kadai04/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kadai04/app/src/main/java/com/example/janken/ResultActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kadai04/app/src/main/res/layout/activity_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../kadai04" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
   </component>
@@ -128,8 +125,12 @@
     <state x="-1375" y="222" key="AndroidCreateXmlResourceDialog/-1920.0.1280.693/0.0.1920.1040@-1920.0.1280.693" timestamp="1599629711877" />
     <state x="818" y="333" key="AndroidCreateXmlResourceDialog/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1599553221984" />
     <state x="545" y="218" key="AndroidCreateXmlResourceDialog/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1599657890535" />
-    <state x="437" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1599816175628">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1604926106554">
       <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604926106554" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1599625026826">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1599625026826" />
     <state x="437" y="225" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1599816175628" />
