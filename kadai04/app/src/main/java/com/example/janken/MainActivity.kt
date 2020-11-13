@@ -2,79 +2,109 @@ package com.example.janken
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.graphics.drawable.AnimationDrawable
+import android.os.Handler
+import android.view.animation.AlphaAnimation
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var ad = AnimationDrawable()
-        var frame1 = resources.getDrawable(R.drawable.rock)
-        var frame2 = resources.getDrawable(R.drawable.scissors)
-        var frame3 = resources.getDrawable(R.drawable.paper)
+        enemyHand.setImageResource(R.drawable.paper)
 
-        ad.addFrame(frame1,50)
-        ad.addFrame(frame2,50)
-        ad.addFrame(frame3,50)
-        imageView.background = ad
-        ad.start()
-
-
-        rock.setOnClickListener{
-            janken(HandType.rock)
-            ad.stop()
+        rock.setOnClickListener {
+            fadeButton(rock)
+            janken(HandType.gu)
         }
 
-        scissors.setOnClickListener{
-            janken(HandType.scissors)
-            ad.stop()
+        scissors.setOnClickListener {
+            fadeButton(scissors)
+            janken(HandType.choki)
         }
 
-        paper.setOnClickListener{
-            janken(HandType.paper)
-            ad.stop()
+        paper.setOnClickListener {
+            fadeButton(paper)
+            janken(HandType.pa)
         }
+
     }
 
-    enum class HandType(val n:Int){
-        rock(1),
-        scissors(2),
-        paper(3)
+    fun janken (hand: HandType) {
+        val randomValue = ( Math.random() * 3 ).toInt()
+        val cpHand = HandType.values().first { it.n == randomValue }
+        val handler = Handler()
+        var runnable = Runnable {}
+        var i: Int = 0
+
+        rock.isClickable = false
+        scissors.isClickable = false
+        paper.isClickable = false
+
+
+        runnable = Runnable {
+            i++
+
+            when (HandType.values().first { it.n == i % 3 }) {
+                HandType.gu -> enemyHand.setImageResource(R.drawable.rock)
+                HandType.choki -> enemyHand.setImageResource(R.drawable.scissors)
+                HandType.pa -> enemyHand.setImageResource(R.drawable.paper)
+            }
+
+            if (i >= 30){
+
+                when (cpHand) {
+                    HandType.gu -> enemyHand.setImageResource(R.drawable.rock)
+                    HandType.choki -> enemyHand.setImageResource(R.drawable.scissors)
+                    HandType.pa -> enemyHand.setImageResource(R.drawable.paper)
+                }
+
+                val gameResult = JankenResult.values().first { it.n == (cpHand.n - hand.n + 3) % 3 }
+
+                when (gameResult) {
+                    JankenResult.draw -> textView.text = "You drow"
+                    JankenResult.win -> textView.text = "You win!"
+                    JankenResult.lose -> textView.text = "You lose"
+                }
+
+                rock.isClickable = true
+                scissors.isClickable = true
+                paper.isClickable = true
+
+            } else {
+                handler.postDelayed (runnable, 50)
+                textView.text = "janken..."
+            }
+        }
+        handler.post (runnable)
     }
 
-    fun janken(hand : HandType){
-        val r = Random.nextInt(3)
-        val enemyHand:Int
-        val myHand:Int=hand.n
+    fun fadeButton (handButton: ImageButton) {
+        val fadeOutAnimation = AlphaAnimation (1.0f,0.0f)
+        val fadeInAnimation = AlphaAnimation (0.0f,1.0f)
 
-        if (r == 0) {
-            enemyHand = HandType.rock.n
-            imageView.setImageResource(R.drawable.rock)
-        } else if (r == 1) {
-            enemyHand = HandType.scissors.n
-            imageView.setImageResource(R.drawable.scissors)
-        } else{
-            enemyHand = HandType.paper.n
-            imageView.setImageResource(R.drawable.paper)
-        }
-        when{
-            enemyHand == myHand ->{
-                textView.text = "You Drow"
-            }
+        fadeOutAnimation.duration = 1000
+        fadeOutAnimation.fillAfter = true
+        handButton.animation = fadeOutAnimation
 
-            ((enemyHand == 1) && (myHand==3)) || ((enemyHand == 2) && (myHand == 1)) || ((enemyHand == 3) && (myHand == 2)) ->{
-                textView.text = "You Win!"
-            }
-
-            else ->{
-                textView.text = "You Lose.."
-            }
-        }
+        fadeInAnimation.duration = 100
+        fadeInAnimation.fillAfter = true
+        handButton.animation = fadeInAnimation
     }
+}
+
+enum class HandType(val n: Int) {
+    gu(0),
+    choki(1),
+    pa(2)
+}
+
+enum class JankenResult (val n:Int) {
+    draw(0),
+    win(1),
+    lose(2)
 }
