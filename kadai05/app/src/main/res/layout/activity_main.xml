@@ -124,15 +124,25 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="300dp"
-        android:layout_height="60dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
+        android:layout_marginBottom="125dp"
+        android:autoText="false"
+        android:line="3"
+        android:lines="3"
+        android:singleLine="false"
         android:text="3行\n表示\n可能"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.053" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
