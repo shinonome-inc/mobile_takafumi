@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
 
         button.setOnClickListener() {
-            if (isFragment == false) {
+            if (!isFragment) {
                 val fragmentTransaction = fragmentManager.beginTransaction()
 
                 fragmentTransaction.add(R.id.container, FirstFragment(), "test")
