@@ -2,8 +2,7 @@ package com.example.api
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.e.api.ItemEntity
-import com.e.api.ItemService
+import android.util.Log
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,25 +21,15 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val itemService = retrofit.create(ItemService::class.java)
+        itemService.items(1, 20)?.enqueue(object: Callback<List<ItemEntity?>?> {
+            override fun onFailure(call: Call<List<ItemEntity?>?>, t: Throwable){
+                Log.d("Error", t.message.toString())
+            }
 
-        fun getItemList(callback: (List<ItemEntity>) -> Unit) {
-            itemService.items(page = 1, perPage = 10).enqueue(object : Callback<List<ItemEntity>> {
+            override fun onResponse(call: Call<List<ItemEntity?>?>, response: Response<List<ItemEntity?>?>) {
+                Log.d("Successful", response.body().toString())
+            }
 
-                override fun onResponse(
-                    call: Call<List<ItemEntity>>?,
-                    response: Response<List<ItemEntity>>?) {
-                    response?.let {
-                        if (response.isSuccessful) {
-                            response.body()?.let {
-                                callback(it)
-                            }
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<List<ItemEntity>>?, t: Throwable?) {}
-                //上は処理が失敗したときの処理
-            })
-        }
+        })
     }
 }
