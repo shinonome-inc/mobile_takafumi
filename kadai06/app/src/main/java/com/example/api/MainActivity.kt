@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://qiita.com/api/v2")
+            .baseUrl("http://qiita.com/api/v2/")
             .addConverterFactory(GsonConverterFactory.create())
             //上はGsonのファクトリーメソッドに必須
             .build()
