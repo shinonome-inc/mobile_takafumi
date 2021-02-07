@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<ItemEntity?>?>, response: Response<List<ItemEntity?>?>) {
                 Log.d("Successful", response.body().toString())
             }
-
+    
         })
     }
 }
