@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+    
         val retrofit = Retrofit.Builder()
             .baseUrl("http://qiita.com/api/v2/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<ItemEntity?>?>, response: Response<List<ItemEntity?>?>) {
                 Log.d("Successful", response.body().toString())
             }
-    
+
         })
     }
 }
