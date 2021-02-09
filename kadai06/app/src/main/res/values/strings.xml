@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">API</string>
     <string name="test">test</string>
-    <string name="_1">ボタン1</string>
-    <string name="_2">ボタン2</string>
+    <string name="button1">ボタン1</string>
+    <string name="button2">ボタン2</string>
     <string name="todo">TODO</string>
 </resources>

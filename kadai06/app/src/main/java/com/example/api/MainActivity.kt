@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        itemService.items(1, 20).enqueue(object : Callback<List<ItemEntity?>?> {
-            override fun onFailure(call: Call<List<ItemEntity?>?>, t: Throwable) {
+        itemService.items(1, 20).enqueue(object : Callback<List<ItemEntity>> {
+            override fun onFailure(call: Call<List<ItemEntity>>, t: Throwable) {
                 Log.d("Error", t.message.toString())
             }
 
             override fun onResponse(
-                call: Call<List<ItemEntity?>?>,
-                response: Response<List<ItemEntity?>?>
+                call: Call<List<ItemEntity>>,
+                response: Response<List<ItemEntity>>
             ) {
                 text1.text = response.body().toString()
             }

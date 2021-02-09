@@ -16,5 +16,5 @@ data class User(
 
 interface ItemService {
     @GET("items")
-    fun items(@Query("page") page: Int, @Query("per_Page") per_Page: Int): Call<List<ItemEntity?>?>
+    fun items(@Query("page") page: Int, @Query("per_page") perPage: Int): Call<List<ItemEntity>>
 }
