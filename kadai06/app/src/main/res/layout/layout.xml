@@ -9,18 +9,19 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="center"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        tools:src="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom|right|end"
-        android:text="test"
+        android:gravity="end"
+        android:text="@string/test"
         android:textSize="100sp"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -31,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button2"
         app:layout_constraintTop_toBottomOf="@id/textView2"
-        android:text="ボタン1" />
+        android:text="@string/_1" />
 
     <Button
         android:id="@+id/button2"
@@ -40,7 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/button1"
         app:layout_constraintTop_toBottomOf="@id/textView2"
-
-        android:text="ボタン2" />
+        android:text="@string/_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

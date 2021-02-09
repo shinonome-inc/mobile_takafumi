@@ -13,19 +13,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit = Retrofit.Builder()
         .baseUrl("https://qiita.com/api/v2/")
         .addConverterFactory(GsonConverterFactory.create())
         //上はGsonのファクトリーメソッドに必須
         .build()
 
-    val itemService = retrofit.create(ItemService::class.java)
+    private val itemService = retrofit.create(ItemService::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        itemService.items(1, 20)?.enqueue(object : Callback<List<ItemEntity?>?> {
+        itemService.items(1, 20).enqueue(object : Callback<List<ItemEntity?>?> {
             override fun onFailure(call: Call<List<ItemEntity?>?>, t: Throwable) {
                 Log.d("Error", t.message.toString())
             }
