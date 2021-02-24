@@ -3,11 +3,10 @@ package com.example.apiApp
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row.view.*
 
-class Adapter(private val homeFeed: Array<HomeFeed>) : RecyclerView.Adapter<Adapter.CustomViewHolder>() {
+class MainAdapter(private val homeFeed: Array<QiitaData>) : RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
     //リスナー格納変数
     lateinit var listener: OnItemClickListener
 
@@ -43,7 +42,7 @@ class Adapter(private val homeFeed: Array<HomeFeed>) : RecyclerView.Adapter<Adap
     }
 
     //インターフェイスの作成
-    interface OnItemClickListener : AdapterView.OnItemClickListener {
+    interface OnItemClickListener {
         fun onItemClickListener(view: View, position: Int, url: String)
     }
 

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_web_view.*
 
-class fragment : Fragment() {
+class WebViewFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,20 +28,20 @@ class fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        text_view.settings.javaScriptEnabled = true
-        text_view.settings.loadWithOverviewMode = true
-        text_view.settings.useWideViewPort = true
+        textView.settings.javaScriptEnabled = true
+        textView.settings.loadWithOverviewMode = true
+        textView.settings.useWideViewPort = true
 
         val args = arguments?.getString("BUNDLE_KEY_URL")
         if (args != null) {
-            text_view.loadUrl(args)
+            textView.loadUrl(args)
         }
     }
 
     companion object {
 
-        fun newInstance(url: String): fragment {
-            val fragment = fragment()
+        fun newInstance(url: String): WebViewFragment {
+            val fragment = WebViewFragment()
             val args = Bundle()
 
             args.putString("BUNDLE_KEY_URL", url)
