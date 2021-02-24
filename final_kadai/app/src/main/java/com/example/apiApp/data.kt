@@ -1,11 +1,5 @@
 package com.example.apiApp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+class HomeFeed(val title: String, val user: User, val url: String)
 
-class data : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_data)
-    }
-}
+class User(val name: String)
